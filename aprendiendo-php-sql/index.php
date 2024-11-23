@@ -13,15 +13,15 @@ if(mysqli_connect_errno()){
 
 // consulta para configurar la codificacion de caracteres
 
-mysqli_query($coneccion, "SET NAMES 'UTF8'");
+mysqli_query($coneccion, "SET NAMES 'UTF-8'");
 
 //consulta SELECT 
-
+var_dump($coneccion);
 $query = mysqli_query($coneccion, "SELECT * FROM notas");
 
-while($notas = mysqli_fetch_assoc($query)){
-    var_dump($notas);
-}
+// while($notas = mysqli_fetch_assoc($query)){
+//     var_dump($notas);
+// }
 
 //insertar en la base de datos
 $sql = "INSERT INTO notas (titulo, descripcion, color) VALUES ('nota3', 'insertando datos desde php', 'blue')";
